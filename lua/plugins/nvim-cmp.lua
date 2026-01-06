@@ -14,6 +14,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp", -- nvim-cmp source for LSP-based autocompletion
 		"hrsh7th/cmp-buffer", -- nvim-cmp source for words from the current buffer
 		"hrsh7th/cmp-path", -- nvim-cmp source for filesystem paths
+    "hrsh7th/cmp-nvim-lsp-signature-help",
 	},
 	config = function()
 		local lspkind = require("lspkind")

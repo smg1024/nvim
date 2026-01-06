@@ -17,15 +17,16 @@ M.on_attach = function(event)
 	end
 
 	-- native neovim keymaps
-	keymap("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts("Go to definition"))
-	keymap("n", "<leader>gS", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts("Go to definition in split"))
-	keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts("Code actions"))
-	keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename<CR>", opts("Rename symbol"))
-	keymap("n", "<leader>D", "<cmd>lua vim.diagnostic.open_float({ scope = 'line' })<CR>", opts("Line diagnostics"))
-	keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts("Cursor diagnostics"))
-	keymap("n", "<leader>pd", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts("Previous diagnostic"))
+	keymap("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts("Peek definition"))
+	keymap("n", "<leader>gd", "<cmd>Lspsaga goto_definition<CR>", opts("Go to definition"))
+	keymap("n", "<leader>gS", "<cmd>vsplit | Lspsaga goto_definition<CR>", opts("Go to definition in split"))
+	keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts("Code actions"))
+	keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts("Rename symbol"))
+	keymap("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts("Line diagnostics"))
+	keymap("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts("Cursor diagnostics"))
+	keymap("n", "<leader>pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts("Previous diagnostic"))
 	keymap("n", "<leader>nd", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts("Next diagnostic"))
-	keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts("Hover documentation"))
+	keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts("Hover documentation"))
 
 	-- fzf-lua keymaps
 	keymap("n", "<leader>fd", "<cmd>FzfLua lsp_finder<CR>", opts("LSP Finder"))

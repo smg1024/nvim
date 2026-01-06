@@ -6,22 +6,6 @@ return {
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
 	config = function()
-		require("nvim-treesitter").install({
-			"lua",
-			"python",
-			"bash",
-			"typescript",
-			"javascript",
-			"html",
-			"css",
-			"json",
-			"yaml",
-			"markdown",
-			"dockerfile",
-			"markdown_inline",
-			"c",
-			"cpp",
-		})
 		require("nvim-treesitter").setup({
 			ensure_installed = {
 				"lua",
